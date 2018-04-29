@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import { Intent, Spinner } from "@blueprintjs/core";
 import '../node_modules/@blueprintjs/core/lib/css/blueprint.css';
 import '../node_modules/@blueprintjs/icons/lib/css/blueprint-icons.css';
+import { Nav, Bill } from './components'
+import Masonry from 'react-masonry-component';
 
 class App extends Component {
   render() {
     return (
-      <Spinner intent={Intent.PRIMARY} />
+      <div>
+        <Nav />
+        <Masonry>
+          <Bill />
+        </Masonry>
+      </div>
     );
   }
 }
