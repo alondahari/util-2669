@@ -1,0 +1,69 @@
+env:
+  browser: true
+  es6: true
+  jest: true
+extends:
+  - standard
+  - standard-react
+  - plugin:import/errors
+  - plugin:import/warnings
+globals:
+  process: true
+  # for jest
+  fail: true
+parserOptions:
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+    jsx: true
+  sourceType: module
+plugins:
+  - react
+rules:
+  indent:
+    - error
+    - 2
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+    - allowTemplateLiterals: true
+  semi:
+    - error
+    - never
+  no-console:
+    - warn
+    - allow: [error]
+  # warn against unresolved imports
+  # disabled until we can figure out base path for it
+  import/no-unresolved: 0
+  comma-dangle:
+    - error
+    - always-multiline
+  max-len:
+    - error
+    - 90
+  jsx-quotes:
+    - error
+    - prefer-single
+  no-multiple-empty-lines: error
+  space-before-function-paren:
+    - error
+    - never
+  react/jsx-curly-spacing:
+    - error
+    - always
+  import/prefer-default-export: warn
+  # removed because https://github.com/yannickcr/eslint-plugin-react/issues/976
+  react/no-unused-prop-types: 0
+  operator-linebreak:
+    - error
+    - after
+  import/namespace:
+    - 'error'
+    - allowComputed: true
+  react/prop-types:
+    - error
+    # this so we don't get false negatives
+    # - skipUndeclared: true
