@@ -1,4 +1,9 @@
 import React from 'react'
+import FacebookLogin from 'react-facebook-login'
 
 export default () =>
-  <p>Login!</p>
+  <FacebookLogin
+    appId='1952630821436647'
+    autoLoad
+    fields='name,email,picture'
+  />
